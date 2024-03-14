@@ -40,5 +40,5 @@ For installation details, see "INSTALL".  For usage details, see
 
 Questions, comments, fixes, and/or enhancements welcome.
 
---Paul Kolano <paul.kolano@nasa.gov>
+--Paul Kolano <pkolano@gmail.com>
 
