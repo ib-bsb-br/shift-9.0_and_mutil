@@ -1,0 +1,26 @@
+#!/usr/bin/perl -T
+
+# This is a skeleton for a script that can be used in the shiftrc
+# select_hook setting, which chooses a remote host given the local
+# client host, the original remote host, and a comma-separated list
+# of candidate host names.
+
+use strict;
+
+# untaint path
+$ENV{PATH} = "/bin:/usr/bin:/usr/local/bin";
+# untaint insecure environment variables
+delete $ENV{$_} foreach (qw(BASH_ENV CDPATH ENV IFS));
+
+exit if (scalar(@ARGV) != 3);
+my $lhost = $ARGV[0];
+my $rhost = $ARGV[1];
+my %hosts = map {$_ => 1} split(/,/, $ARGV[2]);
+
+# do something to decide which host(s) of keys(%hosts) is best/least loaded,
+# which might involve calls to the local load balancing infrastruture,
+# and/or site-specific knowledge of which hosts have best connectivity
+# (either in general or to the given local host)
+
+# print a set of comma-separated host names of the best choices or
+# print nothing to revert to default policy
