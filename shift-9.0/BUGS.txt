@@ -1,0 +1,7 @@
+KNOWN BUGS
+==========
+
+1. Shift is currently not capable of handling paths over the operating
+   system limit.  This limit may be viewed using:
+
+    perl -MPOSIX -le 'print PATH_MAX'
